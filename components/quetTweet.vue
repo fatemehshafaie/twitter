@@ -1,5 +1,6 @@
 <script setup>
 const isLiked=ref(false)
+const count=ref(0);
 </script>
 
 <template>
@@ -47,14 +48,20 @@ const isLiked=ref(false)
 
     <div class="flex justify-center">
       <div class="flex justify-between w-3/4 p-2 mt-1">
-        <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
+        <div class="flex items-center">
+          <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
+          <p class="text-xs px-2">{{ count }}</p>
+        </div>
         <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
-        <font-awesome-icon
+        <div class="flex items-center">
+          <font-awesome-icon
             :icon="['fas', 'heart']"
             class="text-gray-600"
             @click="isLiked = !isLiked"
             :class="{ 'text-red-600': isLiked }"
           />
+          <p class="text-xs px-2">{{ count }}</p>
+        </div>
         <font-awesome-icon
           class="text-gray-600"
           :icon="['fasr', 'arrow-up-from-bracket']"

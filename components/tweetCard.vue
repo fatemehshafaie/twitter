@@ -25,7 +25,10 @@ const isLiked = ref(false);
     </div>
     <div class="flex justify-center">
       <div class="flex justify-between w-3/4 p-2 mt-1">
-        <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
+        <div class="flex items-center">
+          <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
+          <p class="text-xs px-2">{{ count }}</p>
+        </div>
         <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
         <div class="flex items-center">
           <font-awesome-icon

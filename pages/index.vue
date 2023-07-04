@@ -1,4 +1,4 @@
-<script>
+<script setup>
 definePageMeta({
   layout: false,
 });
@@ -6,7 +6,7 @@ definePageMeta({
 <template>
   <NuxtLayout name="default">
     <template #main>
-      <tweetCard class="mt-[8vh]"/>
+      <tweetCard class="mt-[8vh]" />
       <QuetTweet />
       <tweetCard />
       <tweetCard />
