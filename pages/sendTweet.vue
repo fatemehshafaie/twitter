@@ -2,6 +2,10 @@
 definePageMeta({
   layout: false,
 });
+
+function sendTweet(){
+
+}
 </script>
 
 <template #main>
@@ -9,12 +13,12 @@ definePageMeta({
     <template #main>
       <div class="mt-[8.5vh]">
         <div class="flex justify-between items-center">
-          <p class="text-sky-500 mx-3">Cancel</p>
+          <NuxtLink to="/" class="text-sky-500 mx-3">Cancel</NuxtLink>
           <div class="flex items-center">
             <p class="text-sky-500 mx-3 font-semibold">Draft</p>
-            <p class="mx-3 bg-sky-500 text-white px-4 py-2 rounded-full">
+            <button @click="sendTweet()" class="mx-3 bg-sky-500 text-white px-4 py-2 rounded-full">
               Tweet
-            </p>
+            </button>
           </div>
         </div>
         <div class="flex items-center">
