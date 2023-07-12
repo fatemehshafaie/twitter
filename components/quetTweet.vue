@@ -47,7 +47,7 @@ const count=ref(0);
     </div>
 
     <div class="flex justify-center">
-      <div class="flex justify-between w-3/4 p-2 mt-1">
+      <div class="flex justify-between items-center w-3/4 p-2 mt-1">
         <div class="flex items-center">
           <NuxtLink to="/replayTweet">
             <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />

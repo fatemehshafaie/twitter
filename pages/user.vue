@@ -22,11 +22,10 @@ let count = ref(500);
         </div>
       </div>
       <div class="flex justify-end">
-        <a
-          class="border-sky-500 border rounded-full py-1 px-4 m-2 font-semibold text-sky-500"
-          href=""
-          >Edit profile</a
-        >
+        <NuxtLink to="/editUser"
+          class="border-sky-500 border rounded-full py-1 px-4 m-2 mt-3 font-semibold text-sky-500"
+          >Edit profile
+        </NuxtLink>
       </div>
       <div class="flex flex-col mx-4 justify-between gap-2">
         <p class="font-bold">ftmh</p>

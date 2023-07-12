@@ -30,6 +30,6 @@ definePageMeta({
           class="outline-none p-2 w-full h-96"
           placeholder="Tweet your reply"
           type="text"
-        />
+        ></textarea>
       </div>
     </template>
