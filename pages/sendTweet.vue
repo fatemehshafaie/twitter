@@ -8,10 +8,8 @@ function sendTweet(){
 }
 </script>
 
-<template #main>
-  <NuxtLayout name="default">
     <template #main>
-      <div class="mt-[8.5vh]">
+      <div class="mt-4">
         <div class="flex justify-between items-center">
           <NuxtLink to="/" class="text-sky-500 mx-3">Cancel</NuxtLink>
           <div class="flex items-center">
@@ -59,7 +57,5 @@ function sendTweet(){
         </button>
       </div>
     </template>
-  </NuxtLayout>
-</template>
 
 <style></style>

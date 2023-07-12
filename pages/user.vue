@@ -5,10 +5,8 @@ definePageMeta({
 let count = ref(500);
 </script>
 
-<template #main>
-  <NuxtLayout name="default">
     <template #main>
-      <div class="w-full h-[150px] mt-[8vh]">
+      <div class="w-full h-[200px]">
         <img class="h-full w-full" src="../assets/img/header.jpg" alt="" />
       </div>
       <div
@@ -62,8 +60,7 @@ let count = ref(500);
         <QuetTweet />
         <TweetCard class="" />
       </div>
+      <TheFooter/>
     </template>
-  </NuxtLayout>
-</template>
 
 <style></style>
