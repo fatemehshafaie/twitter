@@ -3,7 +3,8 @@ let count = ref(0);
 const isLiked = ref(false);
 </script>
 <template>
-  <div class="flex flex-col py-3 border-b-2">
+  <NuxtLink to="/tweetReply">
+    <div class="flex flex-col py-3 border-b-2">
     <div class="flex">
       <div class="w-14 h-14 m-3">
         <!-- <NuxtLink to="./us" -->
@@ -48,5 +49,7 @@ const isLiked = ref(false);
       </div>
     </div>
   </div>
+  </NuxtLink>
+
 </template>
 <style></style>

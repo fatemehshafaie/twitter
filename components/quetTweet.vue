@@ -4,7 +4,8 @@ const count=ref(0);
 </script>
 
 <template>
-  <div class="flex flex-col py-3 border-b-2">
+  <NuxtLink to="/tweetReply">
+    <div class="flex flex-col py-3 border-b-2">
     <div class="flex">
       <div class="w-14 h-14 m-3">
         <!-- <NuxtLink to="./us" -->
@@ -71,6 +72,8 @@ const count=ref(0);
       </div>
     </div>
   </div>
+  </NuxtLink>
+
 </template>
 
 <style></style>
