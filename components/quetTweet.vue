@@ -5,7 +5,7 @@ const count=ref(0);
 
 <template>
   <NuxtLink to="/tweetReply">
-    <div class="flex flex-col py-3 border-b-2">
+    <div class="flex flex-col py-3">
     <div class="flex">
       <div class="w-14 h-14 m-3">
         <!-- <NuxtLink to="./us" -->
@@ -47,7 +47,10 @@ const count=ref(0);
       </div>
     </div>
 
-    <div class="flex justify-center">
+
+  </div>
+  </NuxtLink>
+  <div class="flex justify-center border-b-2">
       <div class="flex justify-between items-center w-3/4 p-2 mt-1">
         <div class="flex items-center">
           <NuxtLink to="/replay">
@@ -55,7 +58,10 @@ const count=ref(0);
           </NuxtLink>  
           <p class="text-xs px-2">{{ count }}</p>
         </div>
-        <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
+        <NuxtLink to="/quets">
+          <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
+        </NuxtLink>
+
         <div class="flex items-center">
           <font-awesome-icon
             :icon="['fas', 'heart']"
@@ -71,8 +77,6 @@ const count=ref(0);
         />
       </div>
     </div>
-  </div>
-  </NuxtLink>
 
 </template>
 

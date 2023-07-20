@@ -239,6 +239,16 @@ const isLiked = ref(false);
           />
         </div>
       </div>
+      <div class=" h-20 flex justify-between items-center bg-white  w-full sticky bottom-16">
+        <div class="w-10 m-3">
+          <img
+            class="w-full rounded-full"
+            src="../assets/img/profile.jpg"
+            alt=""
+          />
+        </div>
+        <input type="text" name="" id="" placeholder="tweet your reply" class=" bg-gray-300 text-gray-500 rounded-full w-full mr-3 p-3 h-10">
+      </div>
     </template>
   </NuxtLayout>
 </template>
