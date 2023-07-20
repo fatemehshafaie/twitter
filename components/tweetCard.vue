@@ -24,10 +24,11 @@ const isLiked = ref(false);
         </p>
       </div>
     </div>
+    <!-- icons -->
     <div class="flex justify-center">
       <div class="flex justify-between items-center w-3/4 p-2 mt-1">
         <div class="flex items-center">
-          <NuxtLink to="/replayTweet">
+          <NuxtLink to="/replay">
             <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
           </NuxtLink>
           <p class="text-xs px-2">{{ count }}</p>
@@ -48,7 +49,9 @@ const isLiked = ref(false);
         />
       </div>
     </div>
+    
   </div>
+
   </NuxtLink>
 
 </template>
