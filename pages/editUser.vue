@@ -57,7 +57,7 @@ definePageMeta({
     </div>
     <hr />
     <div class="flex">
-      <p class="p-3 font-bold w-28">BItrth date</p>
+      <p class="p-3 font-bold w-28">Bitrth date</p>
       <p class=" text-sky-500 py-3">june 13,2002</p>
     </div>
     <hr>

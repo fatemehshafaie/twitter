@@ -2,6 +2,7 @@
 definePageMeta({
   layout: false,
 });
+// const isActive = ref(true);
 </script>
 <template>
   <NuxtLayout name="default">
@@ -11,7 +12,7 @@ definePageMeta({
       <QuetTweet />
       <TweetCard />
       <QuetTweet />
-      <TweetCard  />
+      <TweetCard />
       <button
         class="fixed text-white bg-sky-500 w-14 h-14 rounded-full right-2 bottom-16"
       >
@@ -22,6 +23,7 @@ definePageMeta({
       <div class="mb-[8vh]"></div>
     </template>
   </NuxtLayout>
+
 </template>
 
 <style></style>
