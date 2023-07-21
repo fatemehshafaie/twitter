@@ -57,10 +57,12 @@ const isLiked = ref(false);
               </NuxtLink>
               <!-- <p class="text-xs px-2">{{ count }}</p> -->
             </div>
-            <font-awesome-icon
-              class="text-gray-600 text-2xl"
-              :icon="['fas', 'retweet']"
-            />
+            <NuxtLink to="/quets">
+              <font-awesome-icon
+                class="text-gray-600 text-2xl"
+                :icon="['fas', 'retweet']"
+              />
+            </NuxtLink>
             <div class="flex items-center">
               <font-awesome-icon
                 :icon="['fas', 'heart']"
@@ -117,7 +119,9 @@ const isLiked = ref(false);
             </NuxtLink>
             <p class="text-xs px-2">{{ count }}</p>
           </div>
-          <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
+          <NuxtLink to="/quets">
+            <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']"
+          /></NuxtLink>
           <div class="flex items-center">
             <font-awesome-icon
               :icon="['fas', 'heart']"
@@ -173,7 +177,9 @@ const isLiked = ref(false);
             </NuxtLink>
             <p class="text-xs px-2">{{ count }}</p>
           </div>
-          <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
+          <NuxtLink to="/quets">
+            <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']"
+          /></NuxtLink>
           <div class="flex items-center">
             <font-awesome-icon
               :icon="['fas', 'heart']"
@@ -210,7 +216,7 @@ const isLiked = ref(false);
         </div>
       </div>
       <div class="m-3 text-right">
-       قثلتنننننننننننننننشممممممممممدل///////کمئ.کککملظ.ئل.و
+        قثلتنننننننننننننننشممممممممممدل///////کمئ.کککملظ.ئل.و
       </div>
       <div class="flex justify-center mb-[8vh]">
         <div class="flex justify-between items-center w-3/4 p-2 mt-1">
@@ -223,7 +229,10 @@ const isLiked = ref(false);
             </NuxtLink>
             <p class="text-xs px-2">{{ count }}</p>
           </div>
-          <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']" />
+          <NuxtLink to="/quets">
+            <font-awesome-icon class="text-gray-600" :icon="['fas', 'retweet']"
+          /></NuxtLink>
+
           <div class="flex items-center">
             <font-awesome-icon
               :icon="['fas', 'heart']"
@@ -239,7 +248,9 @@ const isLiked = ref(false);
           />
         </div>
       </div>
-      <div class=" h-20 flex justify-between items-center bg-white  w-full sticky bottom-16">
+      <div
+        class="h-20 flex justify-between items-center bg-white w-full sticky bottom-16"
+      >
         <div class="w-10 m-3">
           <img
             class="w-full rounded-full"
@@ -247,7 +258,13 @@ const isLiked = ref(false);
             alt=""
           />
         </div>
-        <input type="text" name="" id="" placeholder="tweet your reply" class=" bg-gray-300 text-gray-500 rounded-full w-full mr-3 p-3 h-10">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="tweet your reply"
+          class="bg-gray-300 text-gray-500 rounded-full w-full mr-3 p-3 h-10"
+        />
       </div>
     </template>
   </NuxtLayout>
