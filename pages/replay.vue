@@ -25,11 +25,11 @@ definePageMeta({
             src="../assets/img/profile.JPG"
             alt=""
           />
+          
         </div>
-        <textarea
-          class="outline-none p-2 w-full h-96"
-          placeholder="Tweet your reply"
-          type="text"
-        ></textarea>
+        <p class=" text-gray-500 ">What's happaning?</p>
+      </div>
+      <div class="w-[80%] h-4/5  flex  justify-center" >
+        <editor id="q" class="editor textarea w-full h-full" />
       </div>
     </template>

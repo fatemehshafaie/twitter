@@ -6,7 +6,7 @@ function sendEm() {
 </script>
 
 <template>
-  <div class="container fixed top-0">
+  <div class="container fixed top-0 bg-white">
     <div class="flex justify-between items-center border-b-2">
       <button
         @click="
@@ -32,13 +32,13 @@ function sendEm() {
     </div>
   </div>
     <!-- sidebar -->
-    <div
+    <!-- <div
     class="w-[85%] h-[100vh] absolute top-0 bg-white shadow-2xl "
     :class="{ 'hidden' :isActive }"
   >
     <div class="flex justify-between">
       <div class="w-16 h-16 m-6">
-        <!-- <NuxtLink to="./us" -->
+ 
         <img
           class="w-full rounded-full"
           src="../assets/img/profile.JPG"
@@ -97,7 +97,7 @@ function sendEm() {
       <font-awesome-icon class=" text-sky-500 mx-6 my-3 text-3xl" :icon="['fas', 'qrcode']" />
 
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style></style>

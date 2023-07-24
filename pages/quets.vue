@@ -28,11 +28,11 @@ definePageMeta({
             alt=""
           />
         </div>
-        <textarea
-          type="text"
-          placeholder="Add a comment"
-          class="outline-none font-semibold text-xl"
-        ></textarea>
+        <p class=" text-gray-500">Add a comment</p>
+
+      </div>
+      <div class="w-[80%] h-4/5  flex  justify-center" >
+        <editor id="q" class="editor textarea w-full h-full" />
       </div>
     </div>
     <div class="flex flex-col">
