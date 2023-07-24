@@ -57,39 +57,9 @@ definePageMeta({
       </div>
     </div>
   </div>
-  <div class="absolute bottom-20 mx-3 flex items-center">
-    <font-awesome-icon
-      class="text-sky-500 mr-3"
-      :icon="['fas', 'earth-americas']"
-    />
-    <p class="text-sky-500">Everyone can reply</p>
-  </div>
-  <div class="absolute bottom-0 border-t-2 w-full mt-4">
-    <button class="up icon sub1">
-      <label for="upload">
-        <input id="upload" class="hidden" type="file" />
-        <font-awesome-icon
-          class="text-sky-500 text-2xl px-4 py-5"
-          :icon="['far', 'image']"
-        />
-      </label>
-    </button>
-    <button>
-      <label for="upload">
-        <input
-          id="upload"
-          class="hidden"
-          type="file"
-          accept="image/*"
-          capture="camera"
-        />
 
-        <font-awesome-icon
-          class="text-sky-500 text-2xl px-4 py-5"
-          :icon="['fas', 'camera']"
-        />
-      </label>
-    </button>
+  <div class=" w-full mt-4">
+    <FilePreview></FilePreview>
   </div>
 </template>
 
