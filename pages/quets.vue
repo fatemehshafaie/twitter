@@ -2,11 +2,12 @@
 definePageMeta({
   layout: false,
 });
+let hiden = ref(false);
 </script>
 
 <template>
   <div>
-    <div class="mt-4 ">
+    <div class="mt-4">
       <div class="flex justify-between items-center m-1">
         <NuxtLink to="/" class="text-sky-500 mx-3">Cancel</NuxtLink>
         <div class="flex items-center">
@@ -18,8 +19,9 @@ definePageMeta({
           </button>
         </div>
       </div>
-      <hr>
-      <div class="flex items-baseline">
+      <hr />
+      <div class="flex">
+        <div class="flex items-baseline">
         <div class="w-10 h-9 m-3">
           <!-- <NuxtLink to="./us" -->
           <img
@@ -28,12 +30,23 @@ definePageMeta({
             alt=""
           />
         </div>
-        <p class=" text-gray-500">Add a comment</p>
+      </div>
+      <div class="flex flex-col">
+        <p
+          :class="{ hidden: hiden }"
+          class="text-gray-400  absolute top-16"
+        >
+          Add comment
+        </p>
+        <div
+          @click="hiden = !hiden"
+          class="w-96 h-full mx-6 m-3 flex justify-center"
+        >
+          <editor id="q" class="editor textarea w-full h-full" />
+        </div>
+      </div>
+      </div>
 
-      </div>
-      <div class="w-[80%] h-4/5  flex  justify-center" >
-        <editor id="q" class="editor textarea w-full h-full" />
-      </div>
     </div>
     <div class="flex flex-col">
       <div class="border rounded-xl mx-20 p-2 w-3/4 flex">
@@ -58,7 +71,7 @@ definePageMeta({
     </div>
   </div>
 
-  <div class=" w-full mt-4">
+  <div class="w-full mt-4">
     <FilePreview></FilePreview>
   </div>
 </template>

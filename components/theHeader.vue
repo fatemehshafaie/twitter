@@ -8,12 +8,7 @@ function sendEm() {
 <template>
   <div class="container fixed top-0 bg-white">
     <div class="flex justify-between items-center border-b-2">
-      <button
-        @click="
-          isActive = !isActive;
-        "
-        class="w-10 h-10 m-3"
-      >
+      <button @click="isActive = !isActive" class="w-10 h-10 m-3">
         <!-- <NuxtLink to="./us" -->
         <img
           class="w-full rounded-full"
@@ -31,20 +26,22 @@ function sendEm() {
       />
     </div>
   </div>
-    <!-- sidebar -->
-    <!-- <div
-    class="w-[85%] h-[100vh] absolute top-0 bg-white shadow-2xl "
-    :class="{ 'hidden' :isActive }"
+  <!-- sidebar -->
+  <div
+    class="w-[85%] h-[100vh] absolute top-0 bg-white shadow-2xl"
+    :class="{ hidden: isActive }"
   >
     <div class="flex justify-between">
-      <div class="w-16 h-16 m-6">
- 
-        <img
-          class="w-full rounded-full"
-          src="../assets/img/profile.JPG"
-          alt=""
-        />
-      </div>
+      <button @click="isActive = !isActive">
+        <div class="w-16 h-16 m-6">
+          <img
+            class="w-full rounded-full"
+            src="../assets/img/profile.JPG"
+            alt=""
+          />
+        </div>
+      </button>
+
       <div
         class="rounded-full flex justify-center items-center w-9 h-9 m-6 border-[2px] border-sky-500"
       >
@@ -66,38 +63,58 @@ function sendEm() {
       <p class="text-gray-500">Followers</p>
     </div>
     <div class="flex-col w-[30%] m-6">
-      <NuxtLink to="/user" class="flex justify-between items-center  my-8">
-        <font-awesome-icon class="  text-gray-500 text-xl" :icon="['far', 'user']" />
-        <p class="  font-semibold text-start w-[80px] text-xl ">profile</p>
+      <NuxtLink to="/user" class="flex justify-between items-center my-8">
+        <font-awesome-icon
+          class="text-gray-500 text-xl"
+          :icon="['far', 'user']"
+        />
+        <p class="font-semibold text-start w-[80px] text-xl">profile</p>
       </NuxtLink>
       <div class="flex justify-between items-center my-10">
-        <font-awesome-icon class=" text-gray-500 text-xl" :icon="['fas', 'rectangle-list']" />
+        <font-awesome-icon
+          class="text-gray-500 text-xl"
+          :icon="['fas', 'rectangle-list']"
+        />
         <p class="font-semibold text-start w-[80px] text-xl">List</p>
       </div>
       <div class="flex justify-between items-center my-10">
-        <font-awesome-icon class=" text-gray-500 text-xl" :icon="['far', 'comment-dots']" />
+        <font-awesome-icon
+          class="text-gray-500 text-xl"
+          :icon="['far', 'comment-dots']"
+        />
         <p class="font-semibold text-start w-[80px] text-xl">Topics</p>
       </div>
       <div class="flex justify-between items-center my-10">
-        <font-awesome-icon class=" text-gray-500 text-xl" :icon="['far', 'bookmark']" />
+        <font-awesome-icon
+          class="text-gray-500 text-xl"
+          :icon="['far', 'bookmark']"
+        />
         <p class="font-semibold text-start w-[80px] text-xl">Bookmarks</p>
       </div>
       <div class="flex justify-between items-center my-10">
-        <font-awesome-icon class=" text-gray-500 text-xl" :icon="['fas', 'bolt']" />
+        <font-awesome-icon
+          class="text-gray-500 text-xl"
+          :icon="['fas', 'bolt']"
+        />
         <p class="font-semibold text-start w-[80px] text-xl">Moments</p>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="flex-col m-6 justify-between">
       <p class="my-9 text-2xl">Setting and privacy</p>
       <p class="text-2xl">Help Center</p>
     </div>
     <div class="flex justify-between absolute bottom-0 w-full">
-      <font-awesome-icon class=" text-sky-500 mx-6 my-3 text-3xl" :icon="['far', 'lightbulb']" />
-      <font-awesome-icon class=" text-sky-500 mx-6 my-3 text-3xl" :icon="['fas', 'qrcode']" />
-
+      <font-awesome-icon
+        class="text-sky-500 mx-6 my-3 text-3xl"
+        :icon="['far', 'lightbulb']"
+      />
+      <font-awesome-icon
+        class="text-sky-500 mx-6 my-3 text-3xl"
+        :icon="['fas', 'qrcode']"
+      />
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style></style>

@@ -20,7 +20,8 @@ definePageMeta({
     </div>
     <!--form -->
     <h1 class="flex justify-center font-bold text-3xl my-[6vh]">Login</h1>
-    <input
+    <div class="flex flex-col w-full">
+      <input
       class="outline-none m-3 py-3"
       type="text"
       placeholder="Phone,email or username"
@@ -28,10 +29,12 @@ definePageMeta({
     <div class="w-full ml-3 h-[1px] bg-gray-300"></div>
     <input
       type="password"
-      class="outline-none m-3 py-3"
+      class="outline-none  m-3 py-3"
       placeholder="Password"
     />
     <div class="w-full ml-3 h-[1px] bg-gray-400"></div>
+    </div>
+
     <!-- footer -->
     <div
       class="flex justify-between items-center absolute bottom-0 w-full border-t-2"

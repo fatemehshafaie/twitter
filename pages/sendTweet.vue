@@ -2,11 +2,11 @@
 definePageMeta({
   layout: false,
 });
-let data=0;
+let data = 0;
 
+let hiden = ref(false);
 
 function sendTweet() {}
-
 </script>
 
 <template #main>
@@ -23,24 +23,28 @@ function sendTweet() {}
         </button>
       </div>
     </div>
-    <div class="flex items-center">
-      <div class="w-10 h-9 m-3">
-        <img
-          class="w-full rounded-full"
-          src="../assets/img/profile.JPG"
-          alt=""
-        />
-      </div>
-      <p class=" text-gray-500">What's happaning?</p>
-    </div>
-    <div class="w-[80%] h-4/5 m-5 flex  justify-center" >
+    <div class="flex">
+        <div class="w-10 h-9 m-3 mt-4">
+          <!-- <NuxtLink to="./us" -->
+          <img
+            class="w-full rounded-full"
+            src="../assets/img/profile.JPG"
+            alt=""
+          />
+        </div>
+        <div class="flex flex-col">
+          <p :class="{'hidden' : hiden}" class=" text-gray-400 m-3 mx-6 absolute top-[52px]" >What's happening?</p>
+        <div @click="hiden =!hiden" class=" w-96 h-full mx-6 m-3 flex justify-center" >
         <editor id="q" class="editor textarea w-full h-full" />
+        </div>
+        </div>
+
       </div>
+  
   </div>
-  <div class=" w-full mt-4">
+  <div class="mt-4">
     <FilePreview></FilePreview>
   </div>
-
 </template>
 
 <style></style>

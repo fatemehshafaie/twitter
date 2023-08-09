@@ -2,6 +2,8 @@
 definePageMeta({
   layout: false,
 });
+let hiden =ref(false);
+
 </script>
 
     <template #main>
@@ -25,11 +27,14 @@ definePageMeta({
             src="../assets/img/profile.JPG"
             alt=""
           />
-          
         </div>
-        <p class=" text-gray-500 ">What's happaning?</p>
-      </div>
-      <div class="w-[80%] h-4/5  flex  justify-center" >
+        <div class="flex flex-col">
+          <p :class="{'hidden' : hiden}" class=" text-gray-400 m-3 mx-6 absolute top-24" >What's happening?</p>
+        <div @click="hiden =!hiden" class=" w-96 h-full mx-6 m-3 flex justify-center" >
         <editor id="q" class="editor textarea w-full h-full" />
+        </div>
+        </div>
+
       </div>
+
     </template>
