@@ -1,17 +1,21 @@
 <script setup>
 import axios from "axios";
 import Swal from "sweetalert2";
-import { RouterLink } from "vue-router";
+
 definePageMeta({
   layout: false,
 });
+// definePageMeta({
+//   middleware: [
+//     'auth.js'
+//   ]
+// });
 const username = ref("");
 const pwd = ref("");
-const coockie = ref("");
 function run() {
   axios
     .post(
-      "http://localhost:4000/users/login",
+      "http://192.168.203.83:4000/users/login",
       {
         username: username.value,
         pwd: pwd.value,
@@ -21,10 +25,9 @@ function run() {
       }
     )
     .then(function (response) {
-      document.cookie='user='+response.data.token;
+      document.cookie = "user=" + response.data.token;
       if (response.data.status == true) {
         Swal.fire("Good job!", response.data.message, "success");
-        RouterLink="http://localhost:4000/"
       } else {
         Swal.fire({
           icon: "error",

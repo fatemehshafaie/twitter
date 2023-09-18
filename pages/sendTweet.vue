@@ -9,7 +9,7 @@ let hiden = ref(false);
 function sendTweet() {
   axios
     .post(
-      "http://localhost:4000/users/",
+      "http://192.168.203.83:4000/users/newtweets",
       {
         username: username.value,
         pwd: pwd.value,

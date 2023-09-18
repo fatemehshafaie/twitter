@@ -1,34 +1,41 @@
 <script setup>
 import axios from "axios";
+definePageMeta({
+  middleware: ["authuser"],
+});
 const isActive = ref(true);
-function sendEm() {
-  isActive = !isActive;
-}
+const userInfo = ref({});
 
-axios.get('http://localhost:4000/like',{
-  headers:{}
-})
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
+  axios
+    .get("http://192.168.203.83:4000/users/usrinfo", {
+      headers: {
+        "Cache-Control": "no-cache",
+        "cookies": useCookie("user").value,
+      },
+    })
+    .then(function (response) {
+      userInfo.value = response.data.body;
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+
 </script>
 
 <template>
   <div class="container fixed top-0 bg-white">
     <div class="flex justify-between items-center border-b-2">
-      <button @click="isActive = !isActive" class="w-10 h-10 m-3">
+      <button @click="(isActive = !isActive)" class="w-10 h-10 m-3">
         <!-- <NuxtLink to="./us" -->
         <img
+          :src="'http://192.168.203.83:4000/' + userInfo.profile_picture"
           class="w-full rounded-full"
-          src="../assets/img/profile.JPG"
           alt=""
         />
       </button>
@@ -43,7 +50,7 @@ axios.get('http://localhost:4000/like',{
     </div>
   </div>
   <!-- sidebar -->
-  <div 
+  <div
     class="w-[85%] h-[100vh] absolute top-0 bg-white shadow-2xl"
     :class="{ hidden: isActive }"
   >
@@ -51,10 +58,10 @@ axios.get('http://localhost:4000/like',{
       <button @click="isActive = !isActive">
         <div class="w-16 h-16 m-6">
           <img
-            class="w-full rounded-full"
-            src="../assets/img/profile.JPG"
-            alt=""
-          />
+          :src="'http://192.168.203.83:4000/' + userInfo.profile_picture"
+          class="w-full rounded-full"
+          alt=""
+        />
         </div>
       </button>
 
@@ -69,13 +76,13 @@ axios.get('http://localhost:4000/like',{
     </div>
 
     <div class="flex-col mx-6">
-      <p class="font-bold">Ftmh</p>
-      <p class="text-gray-500">@fatmhesh</p>
+      <p class="font-bold text-lg">{{ userInfo.username }}</p>
+      <p class="text-gray-500">@{{ userInfo.username }}</p>
     </div>
     <div class="flex gap-2 m-6">
-      <p class="font-bold">903</p>
+      <p class="font-bold">{{ userInfo.following }}</p>
       <p class="text-gray-500">Following</p>
-      <p class="font-bold">1,355</p>
+      <p class="font-bold">{{ userInfo.follower }}</p>
       <p class="text-gray-500">Followers</p>
     </div>
     <div class="flex-col w-[30%] m-6">

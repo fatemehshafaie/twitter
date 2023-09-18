@@ -10,7 +10,7 @@ const pwd = ref("");
 function run() {
   axios
     .post(
-      "http://localhost:4000/users/register",
+      "http://192.168.203.83:4000/users/register",
       {
         username: username.value,
         pwd: pwd.value,

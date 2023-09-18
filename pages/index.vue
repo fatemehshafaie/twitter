@@ -1,24 +1,11 @@
 <script setup>
-import axios from 'axios';
+import axios from "axios";
 definePageMeta({
   layout: false,
+  middleware: ["authuser"],
 });
 
 const isActive = ref(true);
-axios.get('http://localhost:4000/like',{
-  headers:{}
-})
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
 
 </script>
 <template>
