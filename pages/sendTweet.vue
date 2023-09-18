@@ -6,7 +6,26 @@ let data = 0;
 
 let hiden = ref(false);
 
-function sendTweet() {}
+function sendTweet() {
+  axios
+    .post(
+      "http://localhost:4000/users/",
+      {
+        username: username.value,
+        pwd: pwd.value,
+      },
+      {
+        headers: {},
+      }
+    )
+    .then(function (response) {
+
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(0, error);
+    });
+}
 </script>
 
 <template #main>

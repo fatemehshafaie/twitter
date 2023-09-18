@@ -1,8 +1,24 @@
 <script setup>
+import axios from "axios";
 const isActive = ref(true);
 function sendEm() {
   isActive = !isActive;
 }
+
+axios.get('http://localhost:4000/like',{
+  headers:{}
+})
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
 </script>
 
 <template>
@@ -27,7 +43,7 @@ function sendEm() {
     </div>
   </div>
   <!-- sidebar -->
-  <div
+  <div 
     class="w-[85%] h-[100vh] absolute top-0 bg-white shadow-2xl"
     :class="{ hidden: isActive }"
   >

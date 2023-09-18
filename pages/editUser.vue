@@ -21,11 +21,10 @@ definePageMeta({
   </button>
   <div class="w-full">
     <div
-      class="mx-4 flex justify-center absolute top-56 bg-white rounded-full w-[80px] h-[80px]"
+      class="mx-4 flex justify-center absolute top-60 bg-white rounded-full w-[75px] h-[75px]"
     >
-      <button class="m-1 w-[75px] h-[75px]">
         <!-- <NuxtLink to="./us" -->
-        <label for="addphoto">
+        <!-- <label for="addphoto">
           <input class="hidden" type="file" name="" id="addphoto" />
           <img
             class="w-full rounded-full brightness-[40%]"
@@ -36,31 +35,33 @@ definePageMeta({
             class="absolute top-[30%] right-[31%] text-white text-3xl"
             :icon="['fas', 'camera']"
           />
-        </label>
-      </button>
+        </label> -->
+        <div class="">
+             <file-preview-e></file-preview-e>
+        </div>
     </div>
   </div>
   <div class="flex flex-col mt-[7vh] border-t-2 justify-between gap-2">
-    <div class="flex ">
+    <div class="flex">
       <p class="p-3 font-bold w-28">Name</p>
-      <p class=" text-sky-500 py-3">ftmh</p>
+      <p class="text-sky-500 py-3">ftmh</p>
     </div>
     <hr />
     <div class="flex h-[10vh]">
       <p class="p-3 font-bold w-28">Bio</p>
-      <p class=" text-sky-500 py-3">somthing</p>
+      <p class="text-sky-500 py-3">somthing</p>
     </div>
     <hr />
-    <div class="flex ">
+    <div class="flex">
       <p class="p-3 font-bold w-28">Location</p>
-      <p class=" text-sky-500 py-3">کرمان</p>
+      <p class="text-sky-500 py-3">کرمان</p>
     </div>
     <hr />
     <div class="flex">
       <p class="p-3 font-bold w-28">Bitrth date</p>
-      <p class=" text-sky-500 py-3">june 13,2002</p>
+      <p class="text-sky-500 py-3">june 13,2002</p>
     </div>
-    <hr>
+    <hr />
   </div>
 </template>
 
