@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 export default defineNuxtRouteMiddleware((to, from) => {
 console.log(useCookie("user").value);
-    axios.get("http://192.168.203.83:4000/users/is_login", {
+    axios.get("http://172.20.10.2:4000/users/is_login", {
         headers: {
             "Cache-Control": "no-cache",
             "cookies": useCookie("user").value,

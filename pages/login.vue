@@ -15,10 +15,10 @@ const pwd = ref("");
 function run() {
   axios
     .post(
-      "http://192.168.203.83:4000/users/login",
+      "http://172.20.10.2:4000/users/login",
       {
-        username: username.value,
-        pwd: pwd.value,
+        "username": username.value,
+        "pwd": pwd.value,
       },
       {
         headers: {},
@@ -28,6 +28,7 @@ function run() {
       document.cookie = "user=" + response.data.token;
       if (response.data.status == true) {
         Swal.fire("Good job!", response.data.message, "success");
+        return navigateTo('/')
       } else {
         Swal.fire({
           icon: "error",

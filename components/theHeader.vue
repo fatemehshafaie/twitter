@@ -7,7 +7,7 @@ const isActive = ref(true);
 const userInfo = ref({});
 
   axios
-    .get("http://192.168.203.83:4000/users/usrinfo", {
+    .get("http://172.20.10.2:4000/users/usrinfo", {
       headers: {
         "Cache-Control": "no-cache",
         "cookies": useCookie("user").value,
@@ -34,7 +34,7 @@ const userInfo = ref({});
       <button @click="(isActive = !isActive)" class="w-10 h-10 m-3">
         <!-- <NuxtLink to="./us" -->
         <img
-          :src="'http://192.168.203.83:4000/' + userInfo.profile_picture"
+          :src="'http://172.20.10.2:4000/' + userInfo.profile_picture"
           class="w-full rounded-full"
           alt=""
         />
@@ -58,7 +58,7 @@ const userInfo = ref({});
       <button @click="isActive = !isActive">
         <div class="w-16 h-16 m-6">
           <img
-          :src="'http://192.168.203.83:4000/' + userInfo.profile_picture"
+          :src="'http://172.20.10.2:4000/' + userInfo.profile_picture"
           class="w-full rounded-full"
           alt=""
         />

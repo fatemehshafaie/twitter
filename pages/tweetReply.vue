@@ -5,6 +5,9 @@ definePageMeta({
 const Liked = ref(false);
 let count = ref(0);
 const isLiked = ref(false);
+
+
+
 </script>
 
 <template>
@@ -27,7 +30,6 @@ const isLiked = ref(false);
               <p>@sabajam.</p>
             </div>
             <p class="text-right mx-4">
-              منم دوست دارم مث شما شکست عشقی بخورم ولی همش دارم غذا میخورم
             </p>
           </div>
         </div>

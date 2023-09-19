@@ -1,9 +1,29 @@
 <script setup>
+import axios from 'axios';
 definePageMeta({
   layout: false,
 });
 let hiden =ref(false);
+// axios
+//   .post("http://172.20.10.2:4000/users//replie/", {
 
+//     headers: {
+//       "Cache-Control": "no-cache",
+//       cookies: useCookie("user").value,
+//     },
+//   })
+//   .then(function (response) {
+
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .finally(function () {
+//     // always executed
+//   });
 </script>
 
     <template #main>
