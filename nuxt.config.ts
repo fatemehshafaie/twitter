@@ -1,5 +1,9 @@
 import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
+  modules: [
+    // ...
+    '@pinia/nuxt',
+  ],
   app: {
     head: {
       charset: 'utf-16',
@@ -36,6 +40,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   // plugins: [
   //  { src: "~/plugins/typed.js", ssr: true }
   // ]

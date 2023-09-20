@@ -9,7 +9,9 @@ const props = defineProps({
   liked: Boolean,
   likes: Number,
   NumberOfReplies: Number,
-  prof:String
+  profile_image:String,
+  twitt_image:String,
+  username:String
 });
 count.value = props.likes;
 isLiked.value = props.liked;
@@ -70,17 +72,18 @@ function liked() {
           <!-- <NuxtLink to="./us" -->
           <img
             class="w-full rounded-full"
-            :src="'http://172.20.10.2:4000/'+props.prof"
+            :src="'http://172.20.10.2:4000/'+props.profile_image"
             alt=""
           />
         </div>
         <div class="w-full m-3">
           <div class="flex py-1">
-            <p class="font-bold px-2">fatmh</p>
-            <p>@fatmhesh.</p>
+            <p class="font-bold px-2">{{ props.username}}</p>
+            <p>@{{ props.username }}.</p>
           </div>
           <div class="m-3">
             <p v-html="props.body" class="text-right mx-4"></p>
+            <img class=" p-6 w-3/4 h-3/4" v-show="props.twitt_image!='0'"  :src="'http://172.20.10.2:4000/'+props.twitt_image" alt="">
           </div>
         </div>
       </div>
@@ -90,7 +93,7 @@ function liked() {
   <div class="flex justify-center border-b-2">
     <div class="flex justify-between items-center w-3/4 p-2 mt-1">
       <div class="flex items-center">
-        <NuxtLink to="/replay">
+        <NuxtLink :to="`replay${props.id}`">
           <font-awesome-icon class="text-gray-600" :icon="['far', 'comment']" />
         </NuxtLink>
         <p class="text-xs px-2">{{ props.NumberOfReplies }}</p>
@@ -122,7 +125,7 @@ function liked() {
   </div>
 </template>
 <style scoped>
-.heart {
+/* .heart {
   cursor: pointer;
   height: 50px;
   width: 50px;
@@ -147,5 +150,5 @@ function liked() {
   to {
     background-position: right;
   }
-}
+} */
 </style>

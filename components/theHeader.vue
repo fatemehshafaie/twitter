@@ -1,40 +1,26 @@
 <script setup>
-import axios from "axios";
+import { useProfile } from "@/store/profile";
 definePageMeta({
-  middleware: ["authuser"],
+  layout: false,
 });
+const user = useProfile();
 const isActive = ref(true);
-const userInfo = ref({});
-
-  axios
-    .get("http://172.20.10.2:4000/users/usrinfo", {
-      headers: {
-        "Cache-Control": "no-cache",
-        "cookies": useCookie("user").value,
-      },
-    })
-    .then(function (response) {
-      userInfo.value = response.data.body;
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
-
+// watch(
+//   () => user.userX,
+//   () => {
+//     console.log('changed',user.userX.username);
+//   },
+//   {deep:true}
+// );
 </script>
 
 <template>
   <div class="container fixed top-0 bg-white">
     <div class="flex justify-between items-center border-b-2">
-      <button @click="(isActive = !isActive)" class="w-10 h-10 m-3">
+      <button @click="isActive = !isActive" class="w-10 h-10 m-3">
         <!-- <NuxtLink to="./us" -->
         <img
-          :src="'http://172.20.10.2:4000/' + userInfo.profile_picture"
+          :src="'http://172.20.10.2:4000/' + user.userX.profile_picture"
           class="w-full rounded-full"
           alt=""
         />
@@ -58,10 +44,10 @@ const userInfo = ref({});
       <button @click="isActive = !isActive">
         <div class="w-16 h-16 m-6">
           <img
-          :src="'http://172.20.10.2:4000/' + userInfo.profile_picture"
-          class="w-full rounded-full"
-          alt=""
-        />
+            :src="'http://172.20.10.2:4000/' + user.userX.profile_picture"
+            class="w-full rounded-full"
+            alt=""
+          />
         </div>
       </button>
 
@@ -76,13 +62,13 @@ const userInfo = ref({});
     </div>
 
     <div class="flex-col mx-6">
-      <p class="font-bold text-lg">{{ userInfo.username }}</p>
-      <p class="text-gray-500">@{{ userInfo.username }}</p>
+      <p class="font-bold text-lg">{{ user.userX.username }}</p>
+      <p class="text-gray-500">@{{ user.userX.username }}</p>
     </div>
     <div class="flex gap-2 m-6">
-      <p class="font-bold">{{ userInfo.following }}</p>
+      <p class="font-bold">{{ user.userX.following }}</p>
       <p class="text-gray-500">Following</p>
-      <p class="font-bold">{{ userInfo.follower }}</p>
+      <p class="font-bold">{{ user.userX.follower }}</p>
       <p class="text-gray-500">Followers</p>
     </div>
     <div class="flex-col w-[30%] m-6">

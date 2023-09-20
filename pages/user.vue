@@ -1,15 +1,25 @@
 <script setup>
 import axios from "axios";
+import { useProfile } from "@/store/profile";
 definePageMeta({
   layout: false,
 });
+const user = useProfile();
+// watch(
+//   () => prof.prof,
+//   () => {
+//     console.log('changed',prof.prof);
+//   },
+//   {deep:true}
+// );
 const userInfo = ref({});
 const tweets = ref([]);
+tweets.value = user.userX.twittes;
 axios
   .get("http://172.20.10.2:4000/users/usrinfo", {
     headers: {
       "Cache-Control": "no-cache",
-      cookies: useCookie("user").value,
+      'cookies': useCookie("user").value,
     },
   })
   .then(function (response) {
@@ -38,7 +48,7 @@ let count = ref(500);
     <div class="m-1 w-[75px] h-[75px]">
       <!-- <NuxtLink to="./us" -->
       <img
-        :src="'http://172.20.10.2:4000/' + userInfo.profile_picture"
+        :src="'http://172.20.10.2:4000/'+user.userX.profile_picture"
         class="w-full rounded-full"
         alt=""
       />
@@ -52,16 +62,16 @@ let count = ref(500);
     </NuxtLink>
   </div>
   <div class="flex flex-col mx-4 justify-between gap-2">
-    <p class="font-bold">{{ userInfo.username }}</p>
-    <p class="text-gray-400">@{{ userInfo.username }}</p>
+    <p class="font-bold">{{ user.userX.username }}</p>
+    <p class="text-gray-400">@{{ user.userX.username }}</p>
     <p class="">this is bio</p>
     <div class="flex">
       <div class="flex items-center">
-        <p class="text-sm font-semibold pr-2">{{ userInfo.following }}</p>
+        <p class="text-sm font-semibold pr-2">{{ user.userX.following }}</p>
         <p class="text-gray-500">Following</p>
       </div>
       <div class="flex items-center">
-        <p class="text-sm font-semibold px-2">{{ userInfo.follower }}</p>
+        <p class="text-sm font-semibold px-2">{{ user.userX.follower }}</p>
         <p class="text-gray-500">followers</p>
       </div>
     </div>
@@ -80,14 +90,16 @@ let count = ref(500);
   </div>
   <div class="mb-[8vh]">
     <TweetCard
-      v-for="(twittes,index) in tweets"
+      v-for="(twittes, index) in tweets"
       :key="index"
       :id="twittes.id"
-      :prof="userInfo.profile_picture"
+      :profile_image="user.userX.profile_picture"
       :liked="twittes.liked"
       :body="twittes.body"
       :likes="twittes.likes"
       :NumberOfReplies="twittes.NumberOfReplies"
+      :twitt_image="twittes.twitt_image"
+      :username="userInfo.username"
     />
   </div>
   <TheFooter />
